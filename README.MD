@@ -16,7 +16,7 @@ In outrounds, there are three changes to the above:
 2.  The elo shift is weighted by the decision. A 3-0 is more decisive than a 2-1, a 4-1 more decisive than a 3-2.
 3.  The winning team receives a flat elo bonus equal to the number of bids at the tournament divided by 2. For example, winning an outround at an octos bid would yield an 8-point bonus.
 
-For more info, visit `METHODOLOGY.md`
+For more information, [go here.](METHODOLOGY.MD)
 
 ### More Details about the Rankings
 
