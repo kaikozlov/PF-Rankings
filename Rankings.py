@@ -33,7 +33,7 @@ K = 50
 
 def add_prelims(tournament, teamsDict, elos_dict, bid):
     '''adds the prelims of a tournament to the rankings'''
-    files = glob.glob(tournament + "/Prelims/*.csv")
+    files = glob.glob("data/" + tournament + "/Prelims/*.csv")
     if len(files) == 0:
         raise Exception(f"Error in reading prelims from {tournament}.")
     for file in files:
@@ -75,7 +75,7 @@ elos_dict = {}
 
 def add_elims(tournament, teamsDict, elos_dict, bid):
     '''adds the elims of a tournament to the rankings'''
-    files = glob.glob(tournament + "/Elims/*.csv")
+    files = glob.glob("data/" + tournament + "/Elims/*.csv")
     if len(files) == 0:
         raise Exception(f"Error in reading elims from {tournament}.")
     for file in files:
@@ -123,7 +123,7 @@ def add_elims(tournament, teamsDict, elos_dict, bid):
 
 def add_tournament(tournament, bid):
     '''adds a tournament to the rankings'''
-    dictionary = entry_dict(tournament)
+    dictionary = entry_dict("data/" + tournament)
     add_prelims(tournament, dictionary, elos_dict, bid)
     add_elims(tournament, dictionary, elos_dict, bid)
 
