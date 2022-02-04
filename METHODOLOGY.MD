@@ -42,7 +42,7 @@ where _f_ is the probability given by our elo function and _o_ is the actual out
 
 <div align="center">
 
-| Tournament | Prelims/Elims | Brief Score |
+| Tournament | Prelims/Elims | Brier Score |
 |------------|---------------|-------------|
 | Ridge      | Prelims       | .207        |
 | Ridge      | Elims         | .165        |
