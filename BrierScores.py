@@ -15,7 +15,7 @@ def brier_prelims(tournament, elos):
     '''Finds the Brier Score and Brier Skill Score of the prelims'''
     brierScoreP = 0
     countP = 0
-    files = glob.glob(tournament + "/Prelims/*.csv")
+    files = glob.glob("data/" + tournament + "/Prelims/*.csv")
     if len(files) == 0:
         raise Exception(f"Error in reading prelims from {tournament}.")
     for file in files:
@@ -47,7 +47,7 @@ def brier_elims(tournament, elos):
     '''Finds the Brier Score and Brier Skill Score of the elims'''
     brierScoreE = 0
     countE = 0
-    files = glob.glob(tournament + "/Elims/*.csv")
+    files = glob.glob("data/" + tournament + "/Elims/*.csv")
     if len(files) == 0:
         raise Exception(f"Error in reading elims from {tournament}.")
     for file in files:
@@ -82,11 +82,20 @@ def brier_elims(tournament, elos):
     bss = 1 - bs / .25
     return f"The Brier Score for the {tournament} elims is {bs}, and the Brier Skill Score is {bss}."
 
-
 print(brier_prelims("Sunvite", elos))
 print(brier_elims("Sunvite", elos))
-print(brier_prelims("ASU", elos))
-print(brier_elims("ASU", elos))
+
+print(brier_prelims("Yale", elos))
+print(brier_elims("Yale", elos))
+
+print(brier_prelims("Emory", elos))
+print(brier_elims("Emory", elos))
+
+print(brier_prelims("Glenbrooks", elos))
+print(brier_elims("Glenbrooks", elos))
+
+#pause until keypress
+input("Press Enter to continue...")
 
 
 
