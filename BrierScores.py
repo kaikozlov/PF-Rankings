@@ -82,17 +82,14 @@ def brier_elims(tournament, elos):
     bss = 1 - bs / .25
     return f"The Brier Score for the {tournament} elims is {bs}, and the Brier Skill Score is {bss}."
 
+print(brier_prelims("ASU", elos))
+print(brier_elims("ASU", elos))
+
 print(brier_prelims("Sunvite", elos))
 print(brier_elims("Sunvite", elos))
 
-print(brier_prelims("Yale", elos))
-print(brier_elims("Yale", elos))
-
 print(brier_prelims("Emory", elos))
 print(brier_elims("Emory", elos))
-
-print(brier_prelims("Glenbrooks", elos))
-print(brier_elims("Glenbrooks", elos))
 
 #pause until keypress
 input("Press Enter to continue...")
