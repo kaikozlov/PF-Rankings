@@ -46,10 +46,6 @@ Debate has a lot of inequities built into it, and sadly no ranking system will d
 
 It's certainly a real concern, but it's not one that should incur the consequence of no rankings. First, in a competitive activity, there will inevitably be some who are better/worse at the game. To mask that is not productive when taking into account additional benefits. Second, rankings existing in and of themselves do not validate or justify inappropriate behavior. We aren't sold that they are a causal reason why some students abuse their perceived status.
 
-#### Which other articles will you be publishing?
-
-In the coming weeks, there will be deeper dives into the methodology of the rankings, as well as other interesting projects. Please check back regularly to see new articles!
-
 #### How are these rankings different from other existing systems?
 
 This is the only elo-based ranking system that currently exist in the debate space. We chose an elo system for its many advantages over other similar systems. For one, elo systems allow for easy comparison of the strength of teams around the country, irrespective of their frequency of competition or the size of the tournaments they attend. Unless you’re aiming for the top ten, once your elo stabilizes, attending more tournaments will not improve your ranking unless you meaningfully improve. This helps avoid biasing the rankings against top teams.
