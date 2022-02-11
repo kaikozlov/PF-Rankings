@@ -242,9 +242,12 @@ add_tournament("Emory", 8)
 add_tournament("Seattle", 1)
 add_tournament("Columbia", 4)
 
-#add_tournament("Pennsbury", 2) #02/04 https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=20488
-#add_tournament("Colleyville", 1) #02/04 https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=21913
-#add_tournament("GoldenDesert", 4) #02/05 https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=22280
+#02/04
+add_tournament("Pennsbury", 2)
+#add_tournament("Colleyville", 1) #02/04 https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=21913 NOT ENTERED BC OCTOS AND FINALS RESULTS NOT PUBLISHED
+
+#02/05
+add_tournament("UNLV", 4)
 
 #add_tournament("Penn", 8) #02/11 https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=20489
 #add_tournament("PalmClassic", 8) #02/12 https://www.tabroom.com/index/tourn/index.mhtml?tourn_id=22663
