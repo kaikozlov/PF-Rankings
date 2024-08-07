@@ -18,6 +18,8 @@ def entry_dict(tournament):
     teams = teams.to_numpy()
     for team in teams:
         school, names = team[1], team[0]
+        print(names)
+        names = names.replace("&nbsp;", "")
         if names.split()[0] < names.split()[2]:
             outputDict[school] = [names, school]
         else:
@@ -28,7 +30,7 @@ def entry_dict(tournament):
     return outputDict
 
 
-K = 50
+K = 30
 
 
 def add_prelims(tournament, teamsDict, elos_dict, bid):
@@ -71,6 +73,7 @@ def add_prelims(tournament, teamsDict, elos_dict, bid):
 
 
 elos_dict = {}
+bidList = {}
 
 
 def add_elims(tournament, teamsDict, elos_dict, bid):
@@ -80,13 +83,26 @@ def add_elims(tournament, teamsDict, elos_dict, bid):
         raise Exception(f"Error in reading elims from {tournament}.")
     for file in files:
         file = open(file, "r")
-        for line in file.readlines()[1:]:
+        lines = file.readlines()[1:]
+        for line in lines:
+            isBid = False
+            if len(lines) == bid:
+                isBid = True
             line = line.split(",")
             try:
                 team1, team2, judge, votes, result = tuple(line[0:5])
             except:
                 continue
             result = result.strip().lower()
+            if isBid:
+                if team1 in bidList:
+                    bidList[team1] += 1
+                else:
+                    bidList[team1] = 1
+                if team2 in bidList:
+                    bidList[team2] += 1
+                else:
+                    bidList[team2] = 1
             try:
                 margin, result = tuple(result.strip()[1:-1].split())
             except:
@@ -123,29 +139,20 @@ def add_elims(tournament, teamsDict, elos_dict, bid):
 
 def add_tournament(tournament, bid):
     '''adds a tournament to the rankings'''
+    print(tournament)
     dictionary = entry_dict("data/" + tournament)
     add_prelims(tournament, dictionary, elos_dict, bid)
     add_elims(tournament, dictionary, elos_dict, bid)
 
-ddTeams = []
-with open("PF_CT_Roster.csv", "r") as fp:
-    for line in fp:
-        ddTeams += [line.split(",")[0].strip()]
-ddTeams = ddTeams[1:]
-
 def write_to_csv(elosList):
     '''write the rankings to the csv'''
-    add = ""
+    add = "Rank,School,Name,Elo\n"
     counter = 0
     for team, eloSchool in elosList:
         elo, school = eloSchool[0],eloSchool[1]
         counter += 1
-        #school = " ".join(team.split()[:-3])
         names = " ".join(team.split())
-        if names in ddTeams:
-            add += str(counter) + "," + school + "," + names + "," + str(round(elo * 1000) / 1000) + ",Y\n"
-        else:
-            add += str(counter) + "," + school + "," + names + "," + str(round(elo*1000)/1000) + ",N\n"
+        add += str(counter) + "," + school + "," + names + "," + str(round(elo*1000)/1000) + "\n"
     with open("Rankings.csv","w") as fp:
         fp.write(add[:-1])
 
